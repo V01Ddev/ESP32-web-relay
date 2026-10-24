@@ -1,0 +1,43 @@
+# --- Arduino / ESP32 ---
+build/
+*.bin
+*.elf
+*.map
+*.hex
+*.sym
+*.lst
+
+# Credentials (Wi-Fi SSID/password, API keys)
+arduino_secrets.h
+secrets.h
+.env
+
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# --- KiCad ---
+# File locks (only present while KiCad has the project open)
+*.lck
+
+# Local project settings (user-specific)
+*.kicad_prl
+
+# Automatic backups
+*-backups/
+*.bak
+*.bak.*
+
+# Generated caches and exports
+fp-info-cache
+*.net
+*.kicad_ipc
+
+# --- Editors / OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+.claude/settings.local.json
