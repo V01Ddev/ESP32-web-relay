@@ -86,9 +86,7 @@ const char INDEX_HTML[] PROGMEM = R"HTML(
     --bg: #0b0d0c;
     --ink: #f1f4ee;
     --muted: #98a298;
-    --edge: #2f3530;
     --focus: #b9d7ff;
-    --lens: clamp(54px, 17vw, 68px);
   }
   * { box-sizing: border-box; }
   body {
@@ -112,77 +110,23 @@ const char INDEX_HTML[] PROGMEM = R"HTML(
     text-align: center;
   }
   .title {
-    margin: 0 0 22px;
+    margin: 0 0 16px;
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.01em;
     color: var(--muted);
   }
-  .signal {
-    display: grid;
-    gap: 10px;
-    padding: 14px;
-    border: 1px solid var(--edge);
-    border-radius: 28px;
-    background: linear-gradient(155deg, #292f2a 0%, #151916 55%, #101311 100%);
-    box-shadow:
-      0 30px 50px -28px rgba(0, 0, 0, 0.9),
-      0 2px 6px rgba(0, 0, 0, 0.55),
-      inset 0 1px 0 rgba(255, 255, 255, 0.07);
-  }
-  .lamp {
-    display: grid;
-    place-items: center;
-    width: calc(var(--lens) + 16px);
-    height: calc(var(--lens) + 16px);
-    border-radius: 50%;
-    background: #090b09;
-    box-shadow:
-      inset 0 10px 16px -6px rgba(0, 0, 0, 0.95),
-      inset 0 -1px 2px rgba(255, 255, 255, 0.05);
-  }
-  .lens {
-    width: var(--lens);
-    height: var(--lens);
-    border-radius: 50%;
-    background: radial-gradient(circle at 38% 32%, #343a35 0%, #181b18 55%, #0e100f 100%);
-    box-shadow:
-      inset 0 3px 7px rgba(0, 0, 0, 0.75),
-      inset 0 -3px 6px rgba(0, 0, 0, 0.6);
-    transition: background 220ms ease, box-shadow 220ms ease;
-  }
-  .lens-red {
-    --lit-hi: #ffb0a8; --lit: #ff5147; --lit-lo: #8c130c;
-    --glow: rgba(255, 81, 71, 0.55); --glow-far: rgba(255, 81, 71, 0.18);
-  }
-  .lens-amber {
-    --lit-hi: #ffe0a0; --lit: #ffbf3b; --lit-lo: #8a5c00;
-    --glow: rgba(255, 191, 59, 0.5); --glow-far: rgba(255, 191, 59, 0.16);
-  }
-  .lens-green {
-    --lit-hi: #a5f7bc; --lit: #3ce06a; --lit-lo: #0c6a2c;
-    --glow: rgba(60, 224, 106, 0.5); --glow-far: rgba(60, 224, 106, 0.16);
-  }
-  body[data-state="off"] .lens-red,
-  body[data-state="on"] .lens-green,
-  body[data-state="pending"] .lens-amber {
-    background: radial-gradient(circle at 38% 32%, var(--lit-hi) 0%, var(--lit) 42%, var(--lit-lo) 100%);
-    box-shadow:
-      0 0 18px var(--glow),
-      0 0 52px var(--glow-far),
-      inset 0 -4px 8px rgba(0, 0, 0, 0.35);
-  }
   .status {
-    margin: 28px 0 0;
+    margin: 0;
     min-height: 1.3em;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 600;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.02em;
   }
   button {
     width: 100%;
     min-height: 54px;
-    margin-top: 20px;
+    margin-top: 28px;
     padding: 0 24px;
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 999px;
@@ -210,35 +154,11 @@ const char INDEX_HTML[] PROGMEM = R"HTML(
     line-height: 1.5;
   }
   [hidden] { display: none !important; }
-  @media (prefers-reduced-motion: no-preference) {
-    body[data-state="pending"] .lens-amber {
-      animation: amber-pulse 1.6s ease-in-out infinite;
-    }
-    @keyframes amber-pulse {
-      0%, 100% {
-        box-shadow:
-          0 0 18px var(--glow),
-          0 0 52px var(--glow-far),
-          inset 0 -4px 8px rgba(0, 0, 0, 0.35);
-      }
-      50% {
-        box-shadow:
-          0 0 8px var(--glow-far),
-          0 0 16px rgba(0, 0, 0, 0),
-          inset 0 -4px 8px rgba(0, 0, 0, 0.35);
-      }
-    }
-  }
 </style>
 </head>
-<body data-state="pending">
+<body>
 <main class="console">
   <h1 class="title">Traffic light</h1>
-  <div class="signal" aria-hidden="true">
-    <div class="lamp"><div class="lens lens-red"></div></div>
-    <div class="lamp"><div class="lens lens-amber"></div></div>
-    <div class="lamp"><div class="lens lens-green"></div></div>
-  </div>
   <p class="status" role="status">Checking&hellip;</p>
   <button id="toggle" type="button" disabled>Turn light on</button>
   <p class="error" id="error" hidden>Can't reach the relay. Make sure you're on the same Wi-Fi network, then try again.</p>
@@ -266,8 +186,6 @@ const char INDEX_HTML[] PROGMEM = R"HTML(
     var switching = false;
 
     function render() {
-      var signalState = (view === "checking" || view === "switching") ? "pending" : view;
-      document.body.dataset.state = signalState;
       statusEl.textContent = labels[view];
       toggleBtn.textContent = on ? "Turn light off" : "Turn light on";
       toggleBtn.disabled = !(view === "on" || view === "off");

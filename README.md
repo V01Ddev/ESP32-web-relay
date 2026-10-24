@@ -48,7 +48,7 @@ The relay input logic is set by `RELAY_ACTIVE_LOW` in the sketch. Most relay mod
 - **Static IP:** use the address configured in `arduino_secrets.h` directly.
 - **Access-point fallback:** if no credentials are present or the connection fails, join `ESP32-Relay` (password `relay1234`) and open `http://192.168.4.1`. Change `AP_SSID` and `AP_PASSWORD` in the sketch to customize this.
 
-The page shows red when the light is off, green when it is on, and amber while a command is in flight. If the board cannot be reached, it reports "Not connected" and retries every few seconds.
+The page shows the current state as text — "Light on" or "Light off". If the board cannot be reached, it reports "Not connected" and retries every few seconds.
 
 ## HTTP API
 
