@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "ESP32-web-relay")(type "KiCad")(uri "${KIPRJMOD}/libs/ESP32-web-relay.pretty")(options "")(descr "Project footprints for ESP32-web-relay"))
+)

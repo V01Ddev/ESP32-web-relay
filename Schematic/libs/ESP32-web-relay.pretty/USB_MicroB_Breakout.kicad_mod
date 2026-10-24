@@ -1,0 +1,240 @@
+(footprint "USB_MicroB_Breakout"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "USB Micro-B female breakout board, 15.8x14.3mm, 1x05 2.54mm header, two 2.5mm mounting holes")
+	(tags "USB micro B breakout power 5V")
+	(property "Reference" "REF**"
+		(at 0 -1.5 0)
+		(layer "F.SilkS")
+		(uuid "1d4fb0f0-416c-4f3f-a24e-14c39719cbdb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "USB_MicroB_Breakout"
+		(at 7.9 15.8 0)
+		(layer "F.Fab")
+		(uuid "97184d97-755d-4acf-9018-95c49b760ae4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c63e6090-2482-405a-83e8-e1929f6d16de")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "55148025-a9ea-42e1-8dd9-8ac92ddc2657")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start 5.5 1.5)
+		(end 5.5 12)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a9f7b90f-b071-428d-a3d8-932f1e81eb98")
+	)
+	(fp_rect
+		(start 0 0)
+		(end 15.8 14.3)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "ae85c5e7-8d36-44b9-9371-b43a7e1df8bd")
+	)
+	(fp_rect
+		(start -0.7 -0.5)
+		(end 16.3 14.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "c0cdf19a-a401-4ba7-9b2a-7e463e6f3aae")
+	)
+	(fp_rect
+		(start -0.5 1.5)
+		(end 5.5 12)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "c2b395f0-b721-462b-8c27-350a99c4ce40")
+	)
+	(fp_rect
+		(start 0 0)
+		(end 15.8 14.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "4d92c9b3-3e49-4e74-9da1-5b5b9afcc857")
+	)
+	(fp_text user "VBUS"
+		(at 12.9 1.27 90)
+		(layer "F.SilkS")
+		(uuid "d9d5aa98-ffb2-4374-aaa7-b895707b6003")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.11)
+			)
+		)
+	)
+	(fp_text user "D-"
+		(at 12.9 3.81 90)
+		(layer "F.SilkS")
+		(uuid "502d47af-e05e-43dc-be76-9e3170a3e921")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.11)
+			)
+		)
+	)
+	(fp_text user "D+"
+		(at 12.9 6.35 90)
+		(layer "F.SilkS")
+		(uuid "8b1cb166-0d54-4e57-97a2-728f0c8b857a")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.11)
+			)
+		)
+	)
+	(fp_text user "ID"
+		(at 12.9 8.89 90)
+		(layer "F.SilkS")
+		(uuid "ca5d62de-6aea-4b06-8388-756c2bbb483a")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.11)
+			)
+		)
+	)
+	(fp_text user "GND"
+		(at 12.9 11.43 90)
+		(layer "F.SilkS")
+		(uuid "ccd3af0a-4df6-406f-92fc-2632d2f12768")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.11)
+			)
+		)
+	)
+	(fp_text user "1"
+		(at 13 0.45 0)
+		(layer "F.SilkS")
+		(uuid "a376153d-a6de-4633-b7d3-2f8425758339")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.11)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 7.9 7.15 0)
+		(layer "F.Fab")
+		(uuid "81da4456-be0d-4aee-bdbf-5700b6a9479c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" np_thru_hole circle
+		(at 7.8 3)
+		(size 2.5 2.5)
+		(drill 2.5)
+		(layers "*.Cu" "*.Mask")
+		(uuid "8395e8b5-a778-46ce-8c0b-63d90b3ee479")
+	)
+	(pad "" np_thru_hole circle
+		(at 7.8 10.9)
+		(size 2.5 2.5)
+		(drill 2.5)
+		(layers "*.Cu" "*.Mask")
+		(uuid "84a229e9-4688-4873-bab2-a9af816ce1dc")
+	)
+	(pad "1" thru_hole rect
+		(at 14.6 1.27)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "0a0a9982-2c9a-45a6-9528-5bd7258f82a7")
+	)
+	(pad "2" thru_hole circle
+		(at 14.6 3.81)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "cc7f6294-a1f9-457b-81c4-296619228195")
+	)
+	(pad "3" thru_hole circle
+		(at 14.6 6.35)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "59a932e4-0371-4eb0-801b-086416bab490")
+	)
+	(pad "4" thru_hole circle
+		(at 14.6 8.89)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ad81c56d-31b8-42a3-b495-fcdb037e766d")
+	)
+	(pad "5" thru_hole circle
+		(at 14.6 11.43)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "3051ea41-34e2-423a-abd3-031eb908e91b")
+	)
+	(embedded_fonts no)
+)
